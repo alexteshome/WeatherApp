@@ -27,8 +27,8 @@ class App extends React.Component{
 
     const country = e.target.elements.country.value;
 
-    const weather_api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${Api_Key}`);
-    const forecast_api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${Api_Key}`);
+    const weather_api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${Api_Key}`);
+    const forecast_api_call = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${Api_Key}`);
 
     const weatherResponse = await weather_api_call.json();
     const forecastResponse = await forecast_api_call.json();
