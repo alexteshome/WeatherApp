@@ -1,7 +1,6 @@
 import React from 'react';
 import { LineChart, Line, Label, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Card } from 'reactstrap';
-import dateFormat from 'dateformat'
 
 const WeatherGraph = (props) => {
     const cardStyle = {
@@ -13,25 +12,11 @@ const WeatherGraph = (props) => {
         
     }
 
-    let data = []; 
-    let date;
-    let time;
-    let temperature;
-    
-    for (let i =0; i < 9; i++) {
-        date = new Date(props.dataList[i].dt_txt + ' UTC')
-        time = dateFormat(date, "H:MM")
-        temperature = Math.round(props.dataList[i].main.temp - 273.15);
-        data.push({
-            time,
-            temperature
-        })
-    };
     return (
         
         <Card body className="text-center" style={cardStyle}>        
             <ResponsiveContainer height={200}>
-                <LineChart data={data}
+                <LineChart data={props.data}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}>
                 <XAxis dataKey="time" stroke="black">
                     <Label value="Time" position="bottom" />
