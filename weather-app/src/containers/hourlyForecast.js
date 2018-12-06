@@ -14,7 +14,6 @@ class HourlyForecast extends React.Component{
         let date;
         let time;
         let temperature;
-        console.log(this.props.list)
         for (let i =0; i < 9; i++) {
             date = new Date(this.props.list[i].dt_txt + ' UTC')
             time = dateFormat(date, "H:MM")
