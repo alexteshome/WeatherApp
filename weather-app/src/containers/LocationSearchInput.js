@@ -20,7 +20,7 @@ class LocationSearchInput extends React.Component {
       const setFormLocation = this.props.setFormLocation
       geocodeByAddress(address)
         .then(res => setFormLocation(res[0].formatted_address))
-        .then(() => this.setState({isGeocoding: false}))
+        .then(() => this.setState({address: '', isGeocoding: false}))
         .catch(error => console.error('Error', error))
     }
     handleError = (status, clearSuggestions) => {
