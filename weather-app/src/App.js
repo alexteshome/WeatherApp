@@ -1,9 +1,10 @@
 import React from 'react';
-import Titles from './components/titles';
+import Titles from './components/Titles';
 import ReportForm from './containers/ReportForm';
-import FiveDayForecast from './containers/fiveDayForecast';
-import HourlyForecast from './containers/hourlyForecast';
+import FiveDayForecast from './containers/FiveDayForecast';
+import HourlyForecast from './containers/HourlyForecast';
 import { getCode, getName } from 'country-list';
+import './App.css'
 
 import { Container, Row } from 'reactstrap';
 class App extends React.Component{
@@ -24,10 +25,11 @@ class App extends React.Component{
     }
     this.fetchWeather = this.fetchWeather.bind(this);
   }
+  //API call to openweathermap for current and 5 day forecast information
   fetchWeather = async (city, country) => {
     if(city && country) {
       const Api_Key = '4f3ccf59baf3fe3b39327995560feed7';
-      
+      //conver country to country code for api url
       const countryCode = getCode(country);
 
       const weather_api_call = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${Api_Key}`);
@@ -39,6 +41,7 @@ class App extends React.Component{
     }
   }
 
+  //function called by search bar (ReportForm component) to get the location inputted by user 
   setReportLocation = (location) => {
     this.fetchWeather(location.cityLoc, location.countryLoc)
     .then(data =>{
@@ -51,6 +54,7 @@ class App extends React.Component{
         wind: data.weatherResponse.wind.speed,
         cloudiness: data.weatherResponse.clouds.all,
         description: data.weatherResponse.weather[0].description,
+        //5 day forecast list
         list: data.forecastResponse.list,
         error: ""
       })})
@@ -69,13 +73,14 @@ class App extends React.Component{
       }
     }
     return(
-      <div  style={{fontFamily: 'Open Sans', color: 'white'}}>
+      <div className="font-wrapper">
         <Titles />
         <hr style={{width: '95%', border: '1px solid white', borderRadius: '5px'}}/>
-        <div style={{width: '35%', paddingLeft: '2.5%'}}><ReportForm setReportLocation={this.setReportLocation} /></div>
+        <div style={{width: '450px', paddingLeft: '2.5%'}}><ReportForm setReportLocation={this.setReportLocation} /></div>
         <br/>
         <h2 style={{textAlign: 'center'}}>{dayForecastTitle()}</h2>
         <Container fluid>
+          {/* 24 hour forecast information, passed to Weather and Graphing components after this container */}
           <HourlyForecast 
             temperature={this.state.temperature}
             city={this.state.city}
@@ -90,6 +95,7 @@ class App extends React.Component{
           <br/>
           <h2 style={{textAlign: 'center'}}>{weekForecastTitle()}</h2>
           <Row>
+            {/* 5 day forecast list passed to container */}
           <FiveDayForecast list = {this.state.list}/>
           </Row>
         </Container>

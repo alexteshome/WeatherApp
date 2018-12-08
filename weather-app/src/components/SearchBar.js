@@ -3,7 +3,7 @@ import { Container, Form, FormGroup, Label, Input, Button} from 'reactstrap';
 
 const Search = (props) => {
   return (
-    <Container fluid style={{paddingLeft: '1%'}}>
+    <Container fluid>
       <Form onSubmit={props.loadWeather} inline>
         <FormGroup>
           <Label for="city" hidden>City</Label>

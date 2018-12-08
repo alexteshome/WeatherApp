@@ -1,11 +1,9 @@
 import React from 'react';
 
 const Weather = (props) => {
- 
   return(
-    
       <div>
-        {props.country && props.city && <h5>Location: {props.city},    {props.country}</h5>}
+        {props.country && props.city && <h5>Location: {props.city}, {props.country}</h5>}
         {props.temperature && <h5>Temperature: {Math.round(props.temperature) + '\xB0C'}</h5>}
         {props.humidity && <h5>Humidity: {props.humidity} %</h5>}
         {props.pressure && <h5>Pressure: {props.pressure} hPA</h5>}

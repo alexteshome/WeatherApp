@@ -14,9 +14,8 @@ const WeatherCard = (props) => {
         display: 'inline-flex',
         width: '100%'
     }
-
     return(
-    <div  style={{fontFamily: 'Arial'}}><b>
+    <div><b>
       <Card body className="text-center" style={cardStyle}>
         <CardTitle>{date.toString().split(' ')[0]}</CardTitle>
         <CardSubtitle>{date.toString().split(' ')[1] + " " + date.getDate()}</CardSubtitle>

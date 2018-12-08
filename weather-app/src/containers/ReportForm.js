@@ -1,5 +1,4 @@
 import React from "react"
-// import the LocationSearchInput
 import LocationSearchInput from './LocationSearchInput'
 
 class ReportForm extends React.Component {

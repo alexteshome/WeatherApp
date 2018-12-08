@@ -9,11 +9,8 @@ const WeatherGraph = (props) => {
         display: 'inline-flex',
         width: '100%',
         minWidth: '700px'
-        
     }
-
     return (
-        
         <Card body className="text-center" style={cardStyle}>        
             <ResponsiveContainer height={200}>
                 <LineChart data={props.data}
