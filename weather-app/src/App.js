@@ -74,9 +74,7 @@ class App extends React.Component{
     }
     return(
       <div className="font-wrapper">
-        <Titles />
-        <hr style={{width: '95%', border: '1px solid white', borderRadius: '5px'}}/>
-        <div style={{width: '450px', paddingLeft: '2.5%'}}><ReportForm setReportLocation={this.setReportLocation} /></div>
+        <Titles setReportLocation = {this.setReportLocation}/>
         <br/>
         <h2 style={{textAlign: 'center'}}>{dayForecastTitle()}</h2>
         <Container fluid>

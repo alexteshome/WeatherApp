@@ -40,7 +40,7 @@ class LocationSearchInput extends React.Component {
     render() {
       const renderInput = ({ getInputProps, getSuggestionItemProps, suggestions }) => (
         <div className="autocomplete-root">
-          <input className="form-control" {...getInputProps({placeholder: 'Search a city...'})} style={{ background: 'transparent', borderColor: 'white'}}/>
+          <input className="form-control" {...getInputProps({placeholder: 'Search a city...'})}/>
           <div className="autocomplete-dropdown-container">
             {suggestions.map(suggestion => (
               <div {...getSuggestionItemProps(suggestion)} className="suggestion">
@@ -56,7 +56,7 @@ class LocationSearchInput extends React.Component {
        }
   
       return (
-        <div>
+        <div className="search-bar">
           <PlacesAutocomplete
             value={this.state.address}
             onChange={this.handleChange}

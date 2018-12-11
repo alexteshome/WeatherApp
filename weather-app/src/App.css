@@ -1,8 +1,14 @@
 .font-wrapper {
     font-family: Quicksand; 
-    color: white;
-}
 
+}
+.jumbotron {
+    background-image: linear-gradient(
+        rgb(42, 53, 85), 
+        #4286f4
+  );
+    border-radius: '0px'
+}
 .suggestion {
     background-color: #f1f1f1;
     color: gray;
@@ -12,4 +18,13 @@
 }
 .suggestion:hover {
     background-color: lightgray;
+}
+
+.search-bar {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin: auto;
+    width: 30em; 
+    
 }
