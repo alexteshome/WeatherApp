@@ -75,9 +75,8 @@ class App extends React.Component{
     return(
       <div className="font-wrapper">
         <Titles setReportLocation = {this.setReportLocation}/>
-        <br/>
-        <h2 style={{textAlign: 'center'}}>{dayForecastTitle()}</h2>
         <Container fluid>
+        <h2 style={{textAlign: 'center'}}>{dayForecastTitle()}</h2>
           {/* 24 hour forecast information, passed to Weather and Graphing components after this container */}
           <HourlyForecast 
             temperature={this.state.temperature}
