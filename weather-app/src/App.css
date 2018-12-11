@@ -7,7 +7,7 @@
         rgb(42, 53, 85), 
         #4286f4
   );
-    border-radius: '0px'
+    border-radius: 0 !important
 }
 .suggestion {
     background-color: #f1f1f1;
