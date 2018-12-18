@@ -18,7 +18,7 @@ const WeatherGraph = (props) => {
                 <XAxis dataKey="time" stroke="black">
                     <Label value="Time" position="bottom" offset={0}/>
                 </XAxis>
-                <YAxis stroke="black" label={{ value: 'Temperature (C)', angle: -90, position: 'topleft' }} />
+                <YAxis stroke="black" label={{ value: 'Temperature (C)', angle: -90 }} />
                 <CartesianGrid stroke="grey" strokeDasharray="3 3"/>
                 <Tooltip/>
                 <Line type="monotone" dataKey="temperature" stroke="blue" activeDot={{r: 8}}/>

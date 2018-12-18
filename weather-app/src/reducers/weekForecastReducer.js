@@ -1,0 +1,15 @@
+import { GET_WEEK_FORECAST } from '../actions/types';
+
+
+export default function(state = {}, action ) {
+    switch(action.type) {
+        case GET_WEEK_FORECAST:
+            return {
+                ...state,
+                list: action.payload
+            };
+        default: 
+            return state;
+    }
+}
+ 

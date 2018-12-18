@@ -19,7 +19,7 @@ const WeatherCard = (props) => {
       <Card body className="text-center" style={cardStyle}>
         <CardTitle>{date.toString().split(' ')[0]}</CardTitle>
         <CardSubtitle>{date.toString().split(' ')[1] + " " + date.getDate()}</CardSubtitle>
-        <img style={imgStyle} src={`http://openweathermap.org/img/w/${props.icon}.png`}/>
+        <img style={imgStyle} src={`http://openweathermap.org/img/w/${props.icon}.png`} alt={props.description}/>
         <CardText>{Math.round(props.temperature) + '\xB0C'}</CardText>
         <CardText>{props.description.charAt(0).toUpperCase() + props.description.slice(1)}</CardText>
       </Card></b>

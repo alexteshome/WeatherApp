@@ -1,0 +1,3 @@
+export const GET_DAY_FORECAST = 'GET_DAY_FORECAST';
+export const GET_WEEK_FORECAST = 'GET_WEEK_FORECAST';
+export const GET_ERRORS = 'GET_ERRORS';
